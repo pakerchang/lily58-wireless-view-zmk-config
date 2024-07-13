@@ -6,50 +6,51 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-// ------------------------------------------------------------------------------------------------------------
-// |  GRAVE |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  -   |
-// |  TAB   |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |  {   |
-// |  LSHFT |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |  '   |
-// |  LCTL  |  Z  |  X  |  C   |  V   |  B   |   ESC  |  |  N/A  |  N   |  M    |  ,    |  .   |   /   | BSLH |
-//                     |  N/A  | LGUI | LALT |  BSPC  |  | ENTER |  SPC | MO(2) |  N/A  |
+            // ------------------------------------------------------------------------------------------------------------
+            // |  GRAVE |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  -   |
+            // |  TAB   |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |  {   |
+            // |  LSHFT |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |  '   |
+            // |  LCTL  |  Z  |  X  |  C   |  V   |  B   |   ESC  |  |  N/A  |  N   |  M    |  ,    |  .   |   /   | BSLH |
+            //                     |  N/A  | LGUI | LALT |  BSPC  |  | ENTER |  SPC | MO(2) |  N/A  |
+
             display-name = "Base";
             bindings = <
-                &kp GRAVE &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp MINUS
-                &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp LBKT
-                &kp LSHFT &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-                &kp LCTL  &kp Z  &kp X  &kp C    &kp V    &kp B    &kp ESC   &none   &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp BSLH
-                        &none    &kp LGUI &kp LALT &kp BSPC &kp RET  &kp SPC  &mo 2  &none
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4    &kp N5                         &kp N6     &kp N7  &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB    &kp Q   &kp W   &kp E   &kp R     &kp T                          &kp Y      &kp U   &kp I      &kp O    &kp P     &kp LBKT
+&kp LSHFT  &kp A   &kp S   &kp D   &kp F     &kp G                          &kp H      &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL  &kp Z   &kp X   &kp C   &kp V     &kp B     &kp ESC     &none    &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
+                           &none   &kp LGUI  &kp LALT  &kp BSPC    &kp RET  &kp SPACE  &mo 1   &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         layer_2 {
-// ------------------------------------------------------------------------------------------------------------
-// |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   | F10  | F11   | F12  |
-// |  N/A  |     | Home| End  | Del  |  N/A |                   | PgUp |  +    |  Up   |  =   |  [    |  ]   |
-// |  LSHFT|     | Vol-| Play | Vol+ |  N/A |                   | PgDn | Left  | Down  | Right|  N/A  | N/A  |
-// |  LCTL |  N/A|     |      |  N/A |  N/A |        |  |  N/A  |  ESC |  N/A  |  N/A  |  N/A |  N/A  | N/A  |
-//                     |  N/A  | LGUI | LALT |  N/A   |  |  N/A  |  N/A |  N/A  |  N/A  |
+            // ------------------------------------------------------------------------------------------------------------
+            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   | F10  | F11   | F12  |
+            // |  N/A  |     | Home| End  | Del  |  N/A |                   | PgUp |  +    |  Up   |  =   |  [    |  ]   |
+            // |  LSHFT|     | Vol-| Play | Vol+ |  N/A |                   | PgDn | Left  | Down  | Right|  N/A  | N/A  |
+            // |  LCTL |  N/A|     |      |  N/A |  N/A |        |  |  N/A  |  ESC |  N/A  |  N/A  |  N/A |  N/A  | N/A  |
+            //                     |  N/A  | LGUI | LALT |  N/A   |  |  N/A  |  N/A |  N/A  |  N/A  |
+
             display-name = "Layer 2";
             bindings = <
-                &kp F1     &kp F2     &kp F3     &kp F4     &kp F5    &kp F6                     &kp F7     &kp F8    &kp F9   &kp F10    &kp F11    &kp F12
-                &none      &none      &kp HOME   &kp END    &kp DEL   &none                      &kp PGUP   &kp KP_PLUS &kp UP   &kp KP_EQUAL &kp LBKT &kp RBKT
-                &kp LSHFT  &none      &kp VOL_DN &kp MPLY   &kp VOL_UP &none                      &kp PGDN   &kp LEFT  &kp DOWN &kp RIGHT  &none      &none
-                &kp LCTL   &none      &none      &none      &none     &none  &none  &none  &kp ESC  &none &none &none &none &none
-                                          &none      &kp LGUI  &kp LALT  &none      &none  &none  &none &none
+&kp F1        &kp F2             &kp F3          &kp F4      &kp F5      &kp F6                           &kp F7         &kp F8       &kp F9    &kp F10       &kp F11   &kp F12
+&kp CAPSLOCK  &none              &none           &kp END     &kp HOME    &kp DELETE                       &kp PAGE_UP    &kp KP_PLUS  &kp UP    &kp KP_EQUAL  &kp LBKT  &kp RBKT
+&kp LSHFT     &kp C_VOLUME_DOWN  &kp C_PREVIOUS  &kp C_PLAY  &kp C_NEXT  &kp C_VOLUME_UP                  &kp PAGE_DOWN  &kp LEFT     &kp DOWN  &kp RIGHT     &none     &none
+&kp LCTRL     &none              &none           &none       &none       &none            &none    &none  &kp ESC        &none        &none     &none         &none     &none
+                                                 &none       &kp LGUI    &kp LALT         &none    &none  &none          &none        &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-            };
         };
     };
+};
+
 };
