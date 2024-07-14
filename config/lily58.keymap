@@ -47,8 +47,6 @@
 &kp LCTRL     &none              &none           &none       &none       &none            &none    &none  &kp ESC        &none         &none     &none      &none     &none
                                                  &none       &kp LGUI    &kp LALT         &none    &none  &none          &none         &none
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
